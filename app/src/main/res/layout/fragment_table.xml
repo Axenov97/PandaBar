@@ -80,7 +80,6 @@
         android:textColor="#B7A73232"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/editText_people"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -96,7 +95,6 @@
         android:textColor="#B7A73232"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/editText_people"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_tea" />
 
@@ -104,7 +102,7 @@
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="68dp"
         android:text="@string/save"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,12 +113,10 @@
         android:id="@+id/button_calc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
         android:layout_marginTop="68dp"
+        android:layout_marginEnd="64dp"
         android:text="расчитать"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toEndOf="@+id/button_save"
         app:layout_constraintTop_toBottomOf="@+id/textView_cake"
         tools:ignore="MissingConstraints" />
 

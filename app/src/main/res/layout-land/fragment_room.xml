@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/table_second"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimary"
+        android:layout_width="140dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="10sp"
+        android:text="Стол №2"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+  />
+
+    <Button
+        android:id="@+id/table_first"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="140dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="10sp"
+        android:text="Стол №1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/table_three"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="140dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="10sp"
+        android:text="Стол №3"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/table_five"
+        app:layout_constraintStart_toEndOf="@+id/table_first"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/table_four"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="140dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="125dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="10sp"
+        android:text="Стол №4"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toStartOf="@+id/table_six"
+        app:layout_constraintStart_toEndOf="@+id/table_second"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/table_five"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="140dp"
+        android:layout_height="122dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="10sp"
+        android:text="Стол №5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/table_six"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="140dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="10sp"
+        android:text="Стол №6"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
