@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PandaBar</string>
+    <string name="save">сохранить</string>
+    <string name="countCake">Количество пирожных</string>
+    <string name="countTea">Количество чая</string>
+    <string name="countPeople">Количество людей за стлом</string>
+    <string name="zero">0</string>
 </resources>

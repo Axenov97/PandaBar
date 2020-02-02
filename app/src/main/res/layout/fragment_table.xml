@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_people"
         style="@android:style/Widget.DeviceDefault.EditText"
         android:layout_width="80dp"
         android:layout_height="45dp"
@@ -15,10 +16,40 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="number"
-        android:text="0"
+        android:text="@string/zero"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:text="0" />
+
+    <EditText
+        android:id="@+id/editText_tea"
+        style="@android:style/Widget.DeviceDefault.EditText"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_people"
+        tools:ignore="MissingConstraints"
+        tools:text="0" />
+
+    <EditText
+        android:id="@+id/editText_cake"
+        style="@android:style/Widget.DeviceDefault.EditText"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_tea"
         tools:ignore="MissingConstraints"
         tools:text="0" />
 
@@ -29,23 +60,83 @@
         android:layout_marginTop="16dp"
         android:fontFamily="cursive"
         android:gravity="bottom"
-        android:text="Количество людей за стлом"
+        android:text="@string/countPeople"
         android:textAlignment="center"
         android:textColor="#B7A73232"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/editText_people"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_tea"
+        android:layout_width="332dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="cursive"
+        android:gravity="bottom"
+        android:text="@string/countTea"
+        android:textAlignment="center"
+        android:textColor="#B7A73232"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/editText_people"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView_cake"
+        android:layout_width="332dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="cursive"
+        android:gravity="bottom"
+        android:text="@string/countCake"
+        android:textAlignment="center"
+        android:textColor="#B7A73232"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/editText_people"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_tea" />
+
     <Button
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="сохранить"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_cake"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_calc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="68dp"
+        android:text="расчитать"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toEndOf="@+id/button_save"
+        app:layout_constraintTop_toBottomOf="@+id/textView_cake"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView_calc"
+        android:layout_width="0dp"
+        android:layout_height="115dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginTop="120dp"
+        android:textColor="#222968"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/button_calc" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

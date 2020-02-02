@@ -8,7 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.bignerdanch.pandabar.databinding.FragmentRoomBinding
 
-class RoomFragment:Fragment(){
+class RoomFragment:Fragment() {
     var binding:FragmentRoomBinding? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -35,4 +35,6 @@ class RoomFragment:Fragment(){
         super.onDestroyView()
         binding = null
     }
+
+
 }

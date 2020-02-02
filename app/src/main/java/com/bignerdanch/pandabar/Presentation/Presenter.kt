@@ -8,7 +8,7 @@ import com.bignerdanch.pandabar.View.TableFragment
 
 class Presenter: Contract.Presenter {
 
-    private companion object val TAG = "MainPresenter"
+    private companion object val TAG = "Presenter"
     private var view: Contract.View
     private var model: Contract.Model
 
@@ -17,19 +17,24 @@ class Presenter: Contract.Presenter {
         this.model = TableModel()
     }
 
-    override fun getCount(context: Context, id: String):String {
-        return model.returnCount(context, id)
+    override fun getCount(context: Context, id: String):String
+        = model.returnCount(context, id)
+
+    override fun getTea(context: Context, id: String): String
+        = model.returnTea(context, id)
+
+    override fun getCake(context: Context, id: String): String
+        = model.returnCake(context, id)
+
+    override fun onButtonSaveClicked(context: Context, count:String, tea:String, cake:String, id:String) {
+        model.addCount(context, count, tea, cake, id)
     }
-    override fun onButtonSaveClicked(context: Context, count:String, id:String) {
-        model.addCount(context, count, id)
-    }
+
+    override fun onButtonCalcClicked(context: Context, count: String, tea: String, cake: String, id: String):Int
+        = model.calcCost(context, count, tea, cake, id)
+
 
     override fun onDestroy() {
-        /**
-         * Если бы мы работали например с RxJava, в этом классе стоило бы отписываться от подписок
-         * Кроме того, при работе с другими методами асинхронного андроида здесь мы боремся с утечкой контекста
-         */
-
         Log.d(TAG, "onDestroy()")
     }
 }

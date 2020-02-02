@@ -19,7 +19,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + PandaTable.NAME + "(" +
                 " _id integer primary key autoincrement, " +
                 PandaTable.Cols.ID + ", " +
-                PandaTable.Cols.COUNT + ")"
+                PandaTable.Cols.COUNT + ", " +
+                PandaTable.Cols.TEA + ", " +
+                PandaTable.Cols.CAKE + ")"
         );
     }
 

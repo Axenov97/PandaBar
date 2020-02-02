@@ -1,46 +1,50 @@
 package com.bignerdanch.pandabar.View
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bignerdanch.pandabar.Contract.Contract
 import com.bignerdanch.pandabar.Presentation.Presenter
 import com.bignerdanch.pandabar.R
+import com.bignerdanch.pandabar.databinding.FragmentTableBinding
+import kotlinx.android.synthetic.main.fragment_table.view.*
 
 
 class TableFragment:Fragment(),Contract.View, View.OnClickListener {
-    private lateinit var textView: TextView
-    private lateinit var editText:EditText
-    private lateinit var buttonSave:Button
+
+    var binding: FragmentTableBinding? = null
     private lateinit var presenter: Presenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         presenter = Presenter(this)
-        return inflater.inflate(R.layout.fragment_table, container, false)
+        return FragmentTableBinding.inflate(inflater).apply {binding = this}.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textView = view.findViewById(R.id.textView)
-        editText = view.findViewById(R.id.editText)
-        buttonSave = view.findViewById(R.id.button_save)
-        buttonSave.setOnClickListener(this)
-        editText.setText(showCount())
+       binding!!.buttonSave.setOnClickListener(this)
+        binding!!.buttonCalc.setOnClickListener(this)
+
+        val tableId:String = arguments!!.getSerializable(ARG_ID) as String
+        binding!!.editTextPeople.setText(presenter.getCount(activity!!, tableId))
+        binding!!.editTextTea.setText(presenter.getTea(activity!!, tableId))
+        binding!!.editTextCake.setText(presenter.getCake(activity!!, tableId))
     }
 
-    override fun showCount():String? {
-        var tableId:String = arguments!!.getSerializable(ARG_ID) as String
-        return presenter.getCount(activity!!, tableId)
-   }
-
+    @SuppressLint("SetTextI18n")
     override fun onClick(v: View?) {
-        var tableId:String = arguments!!.getSerializable(ARG_ID) as String
-        presenter.onButtonSaveClicked(activity!!, editText.text.toString(), tableId)
+        val tableId:String = arguments!!.getSerializable(ARG_ID) as String
+        when(v!!.id){
+            R.id.button_save ->
+                presenter.onButtonSaveClicked(activity!!, binding!!.editTextPeople.text.toString(),
+                    binding!!.editTextTea.text.toString(), binding!!.editTextCake.text.toString(), tableId)
+            R.id.button_calc ->
+                binding!!.textViewCalc.text = "К оплате " + presenter.onButtonCalcClicked(activity!!, binding!!.editTextPeople.text.toString(),
+                    binding!!.editTextTea.text.toString(), binding!!.editTextCake.text.toString(), tableId).toString() + " рублей"
+        }
     }
 
     companion object {
